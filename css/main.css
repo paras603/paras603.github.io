@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.m-f{
+  font-family: 'Aclonica', sans-serif;
+  text-transform: uppercase;
+}
+
+body{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/back-image.jpg");
+	background-size: cover, cover;
+	background-attachment: fixed;
+	position: relative;
+}
+
+main{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.header{
+  height: 100vh;
+  color: #fff;
+  line-height: 50px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.header-content{
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.header-content h1{
+  font-size: 42px;
+}
+
+
+
+/*Icons*/
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px 2px;
+  border-radius: 50%;
+  color: white;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  border: 1px solid white;
+}
+
+
+/*CSS for social icons*/
+.social-icons {
+  list-style: none;
+}
+
+.social-icons li {
+  display: inline;
+}
+
+/*CSS for footer*/
+.footer {
+  text-align: center;
+}
+
+
+/*CSS for Media Queries*/
+@media screen and (max-width: 768px){
+  .header-content{
+    padding-top: 25vh;
+  }
+}
+
+@media screen and (max-width: 320px){
+
+  .header-content{
+    padding-top: 20vh;
+  }
+
+  .header-content h1{
+	  font-size: 35px;
+	}
+
+  .header-content h2{
+    font-size: 18px;
+  }
+
+  .fa {
+    padding: 7px;
+    font-size: 25px;
+  }
+
+}
