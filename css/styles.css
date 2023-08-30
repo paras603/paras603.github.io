@@ -10120,6 +10120,13 @@ section.resume-section .resume-section-content {
   width: 100%;
 }
 
+.download{
+  height: 40px;
+  width: 100px;
+  background-color: #bd5d38 !important;
+  color: black;
+}
+
 @media (min-width: 768px) {
   section.resume-section {
     min-height: 100vh;
