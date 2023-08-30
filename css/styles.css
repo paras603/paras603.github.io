@@ -10121,8 +10121,9 @@ section.resume-section .resume-section-content {
 }
 
 .download{
-  height: 40px;
-  width: 100px;
+  height: 60px;
+  width: 150px;
+  text-align: center;
   background-color: #bd5d38 !important;
   color: black;
 }
