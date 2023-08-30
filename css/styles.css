@@ -10123,7 +10123,7 @@ section.resume-section .resume-section-content {
 .download{
   height: 80px;
   width: 150px;
-  padding: 50px;
+  padding-top: 50px;
   text-align: center;
   background-color: #bd5d38 !important;
   color: white;
