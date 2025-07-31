@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import PageLayout from './PageLayout';
+import Button from './Button';
 
 const gridSize = 10;
 const initialSnake = [
@@ -23,14 +24,13 @@ const getRandomFoodPosition = (snake: number[][]): [number, number] => {
 };
 
 const SnakeGame: React.FC = () => {
-  const navigate = useNavigate();
-
   const [snake, setSnake] = useState<number[][]>(initialSnake);
   const [direction, setDirection] = useState<Direction>('RIGHT');
   const [food, setFood] = useState<[number, number]>(() =>
     getRandomFoodPosition(initialSnake)
   );
   const [gameOver, setGameOver] = useState(false);
+  const [score, setScore] = useState(0);
 
   const moveRef = useRef(direction);
   moveRef.current = direction;
@@ -99,6 +99,7 @@ const SnakeGame: React.FC = () => {
         if (newHead[0] === food[0] && newHead[1] === food[1]) {
           newSnake = [...prevSnake, newHead];
           setFood(getRandomFoodPosition(newSnake));
+          setScore((prev) => prev + 1);
         } else {
           newSnake = [...prevSnake.slice(1), newHead];
         }
@@ -114,25 +115,20 @@ const SnakeGame: React.FC = () => {
     setSnake(initialSnake);
     setDirection('RIGHT');
     setFood(getRandomFoodPosition(initialSnake));
+    setScore(0);
     setGameOver(false);
   };
 
   return (
-    <div className="w-screen h-screen bg-[#f5f5f5] flex flex-col items-center justify-center p-8 select-none relative text-gray-900">
-      <button
-        onClick={() => navigate('/')}
-        className="absolute top-6 left-6 border border-gray-700 rounded px-3 py-1 text-sm font-semibold hover:bg-gray-200 transition-colors"
-      >
-        ← Back
-      </button>
-
-      <h1 className="text-2xl font-medium mb-8">Snake Game</h1>
+    <PageLayout title="Snake Game">
+      <p className="text-lg font-semibold mb-6 text-center">Score: {score}</p>
 
       <div
-        className="grid gap-[2px]"
+        className="grid gap-[2px] mx-auto"
         style={{
           gridTemplateColumns: `repeat(${gridSize}, 28px)`,
           gridTemplateRows: `repeat(${gridSize}, 28px)`,
+          width: `${gridSize * 28 + (gridSize - 1) * 2}px`, // 28px cell + 2px gap between cells
         }}
       >
         {Array.from({ length: gridSize * gridSize }).map((_, idx) => {
@@ -159,15 +155,10 @@ const SnakeGame: React.FC = () => {
       {gameOver && (
         <div className="mt-10 text-center">
           <h2 className="text-xl font-medium mb-4">Game Over</h2>
-          <button
-            onClick={restartGame}
-            className="border border-gray-700 rounded px-6 py-2 font-semibold hover:bg-gray-200 transition-colors"
-          >
-            Restart
-          </button>
+          <Button onClick={restartGame}>Restart</Button>
         </div>
       )}
-    </div>
+    </PageLayout>
   );
 };
 

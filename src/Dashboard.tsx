@@ -4,17 +4,36 @@ const Dashboard: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="w-screen h-screen bg-[#f5f5f5] flex flex-col items-center justify-center text-gray-900 p-8">
-      <h1 className="text-3xl font-medium mb-4">Under Construction</h1>
-      <p className="mb-8 text-base max-w-sm text-center">
-        This dashboard is coming soon. Meanwhile, try the Snake Game!
+    <div className="w-screen min-h-screen bg-[#fafafa] flex flex-col items-center justify-center text-gray-900 p-8">
+      <h1 className="text-4xl font-semibold mb-6 tracking-tight">
+        Under Construction
+      </h1>
+      <p className="mb-10 max-w-xs text-center text-gray-600 text-base leading-relaxed">
+        The portfolio is coming soon. Meanwhile, try some games!
       </p>
-      <button
-        onClick={() => navigate('/game')}
-        className="border border-gray-700 text-gray-900 px-8 py-2 rounded hover:bg-gray-200 transition-colors text-sm font-semibold"
-      >
-        Play Snake Game
-      </button>
+      <div className="flex flex-col gap-4 w-full max-w-xs">
+        <button
+          onClick={() => navigate('/snake')}
+          className="w-full border border-gray-300 rounded-md py-3 text-gray-900 font-medium text-base cursor-pointer
+            hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+        >
+          Play Snake Game
+        </button>
+        <button
+          onClick={() => navigate('/tictactoe')}
+          className="w-full border border-gray-300 rounded-md py-3 text-gray-900 font-medium text-base cursor-pointer
+            hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+        >
+          Play Tic Tac Toe
+        </button>
+        <button
+          onClick={() => navigate('/tictactoe')}
+          className="w-full border border-gray-300 rounded-md py-3 text-gray-900 font-medium text-base cursor-pointer
+            hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+        >
+          Play Wac a mole
+        </button>
+      </div>
     </div>
   );
 };
