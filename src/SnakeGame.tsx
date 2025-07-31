@@ -35,26 +35,60 @@ const SnakeGame: React.FC = () => {
   const moveRef = useRef(direction);
   moveRef.current = direction;
 
+  // Detect mobile (optional if you want to conditionally add swipe only on mobile)
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      switch (e.key) {
-        case 'ArrowUp':
-          if (moveRef.current !== 'DOWN') setDirection('UP');
-          break;
-        case 'ArrowDown':
-          if (moveRef.current !== 'UP') setDirection('DOWN');
-          break;
-        case 'ArrowLeft':
-          if (moveRef.current !== 'RIGHT') setDirection('LEFT');
-          break;
-        case 'ArrowRight':
-          if (moveRef.current !== 'LEFT') setDirection('RIGHT');
-          break;
-      }
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+  // Touch positions to detect swipe
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  useEffect(() => {
+    if (!isMobile) return; // only add swipe on mobile
+
+    const handleTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (!touchStartRef.current) return;
+      const touch = e.changedTouches[0];
+      const dx = touch.clientX - touchStartRef.current.x;
+      const dy = touch.clientY - touchStartRef.current.y;
+
+      // Threshold to consider a swipe (in pixels)
+      const threshold = 30;
+      if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
+
+      if (Math.abs(dx) > Math.abs(dy)) {
+        // Horizontal swipe
+        if (dx > 0 && moveRef.current !== 'LEFT') setDirection('RIGHT');
+        else if (dx < 0 && moveRef.current !== 'RIGHT') setDirection('LEFT');
+      } else {
+        // Vertical swipe
+        if (dy > 0 && moveRef.current !== 'UP') setDirection('DOWN');
+        else if (dy < 0 && moveRef.current !== 'DOWN') setDirection('UP');
+      }
+
+      touchStartRef.current = null;
+    };
+
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [isMobile]);
 
   useEffect(() => {
     if (gameOver) return;
@@ -128,7 +162,7 @@ const SnakeGame: React.FC = () => {
         style={{
           gridTemplateColumns: `repeat(${gridSize}, 28px)`,
           gridTemplateRows: `repeat(${gridSize}, 28px)`,
-          width: `${gridSize * 28 + (gridSize - 1) * 2}px`, // 28px cell + 2px gap between cells
+          width: `${gridSize * 28 + (gridSize - 1) * 2}px`,
         }}
       >
         {Array.from({ length: gridSize * gridSize }).map((_, idx) => {
