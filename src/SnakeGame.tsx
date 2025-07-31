@@ -35,24 +35,46 @@ const SnakeGame: React.FC = () => {
   const moveRef = useRef(direction);
   moveRef.current = direction;
 
-  // Detect mobile (optional if you want to conditionally add swipe only on mobile)
+  // State to track if device is mobile (screen width ≤ 768px)
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    checkMobile();
+    checkMobile(); // Initial check
+
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Touch positions to detect swipe
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
+  // Keyboard Controls
   useEffect(() => {
-    if (!isMobile) return; // only add swipe on mobile
+    const handleKeyDown = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'ArrowUp':
+          if (moveRef.current !== 'DOWN') setDirection('UP');
+          break;
+        case 'ArrowDown':
+          if (moveRef.current !== 'UP') setDirection('DOWN');
+          break;
+        case 'ArrowLeft':
+          if (moveRef.current !== 'RIGHT') setDirection('LEFT');
+          break;
+        case 'ArrowRight':
+          if (moveRef.current !== 'LEFT') setDirection('RIGHT');
+          break;
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
+  // Optional: Swipe Gesture Controls (Mobile)
+  /*
+  useEffect(() => {
     const handleTouchStart = (e: TouchEvent) => {
       const touch = e.touches[0];
       touchStartRef.current = { x: touch.clientX, y: touch.clientY };
@@ -64,16 +86,10 @@ const SnakeGame: React.FC = () => {
       const dx = touch.clientX - touchStartRef.current.x;
       const dy = touch.clientY - touchStartRef.current.y;
 
-      // Threshold to consider a swipe (in pixels)
-      const threshold = 30;
-      if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
-
       if (Math.abs(dx) > Math.abs(dy)) {
-        // Horizontal swipe
         if (dx > 0 && moveRef.current !== 'LEFT') setDirection('RIGHT');
         else if (dx < 0 && moveRef.current !== 'RIGHT') setDirection('LEFT');
       } else {
-        // Vertical swipe
         if (dy > 0 && moveRef.current !== 'UP') setDirection('DOWN');
         else if (dy < 0 && moveRef.current !== 'DOWN') setDirection('UP');
       }
@@ -83,12 +99,12 @@ const SnakeGame: React.FC = () => {
 
     window.addEventListener('touchstart', handleTouchStart);
     window.addEventListener('touchend', handleTouchEnd);
-
     return () => {
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [isMobile]);
+  }, []);
+  */
 
   useEffect(() => {
     if (gameOver) return;
@@ -153,6 +169,17 @@ const SnakeGame: React.FC = () => {
     setGameOver(false);
   };
 
+  const handleMobileDirection = (newDir: Direction) => {
+    if (
+      (newDir === 'UP' && moveRef.current !== 'DOWN') ||
+      (newDir === 'DOWN' && moveRef.current !== 'UP') ||
+      (newDir === 'LEFT' && moveRef.current !== 'RIGHT') ||
+      (newDir === 'RIGHT' && moveRef.current !== 'LEFT')
+    ) {
+      setDirection(newDir);
+    }
+  };
+
   return (
     <PageLayout title="Snake Game">
       <p className="text-lg font-semibold mb-6 text-center">Score: {score}</p>
@@ -185,6 +212,38 @@ const SnakeGame: React.FC = () => {
           );
         })}
       </div>
+
+      {/* Show controls only on mobile */}
+      {isMobile && (
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <button
+            className="px-4 py-2 bg-gray-500 text-white rounded"
+            onClick={() => handleMobileDirection('UP')}
+          >
+            ↑
+          </button>
+          <div className="flex gap-4">
+            <button
+              className="px-4 py-2 bg-gray-500 text-white rounded"
+              onClick={() => handleMobileDirection('LEFT')}
+            >
+              ←
+            </button>
+            <button
+              className="px-4 py-2 bg-gray-500 text-white rounded"
+              onClick={() => handleMobileDirection('RIGHT')}
+            >
+              →
+            </button>
+          </div>
+          <button
+            className="px-4 py-2 bg-gray-500 text-white rounded"
+            onClick={() => handleMobileDirection('DOWN')}
+          >
+            ↓
+          </button>
+        </div>
+      )}
 
       {gameOver && (
         <div className="mt-10 text-center">

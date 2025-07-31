@@ -17,21 +17,21 @@ const Dashboard: React.FC = () => {
           className="w-full border border-gray-300 rounded-md py-3 text-gray-900 font-medium text-base cursor-pointer
             hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
         >
-          Play Snake Game
+          Snakey
         </button>
         <button
           onClick={() => navigate('/tictactoe')}
           className="w-full border border-gray-300 rounded-md py-3 text-gray-900 font-medium text-base cursor-pointer
             hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
         >
-          Play Tic Tac Toe
+          Tic Tac Toe
         </button>
         <button
           onClick={() => navigate('/memorygame')}
           className="w-full border border-gray-300 rounded-md py-3 text-gray-900 font-medium text-base cursor-pointer
             hover:bg-gray-100 active:bg-gray-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
         >
-          Memory Game
+          Test your memory
         </button>
       </div>
     </div>
