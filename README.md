@@ -1,48 +1,12 @@
-# paras603.github.io
+# React + Vite
 
-# Paras Mani Rai
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Welcome to my portfolio! This repository showcases a curated collection of my work, skills, and accomplishments. I'm passionate about web and mobile development, and this portfolio is a testament to my journey and growth in this area.
+Currently, two official plugins are available:
 
-## Table of Contents
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- [About Me](#about-me)
-- [Projects](#projects)
-- [Skills](#skills)
-- [Contact](#contact)
+## Expanding the ESLint configuration
 
-## About Me
-
-I am a Paras Mani Rai with a strong enthusiasm for web development. With a background in BSc. (Hons.) Computing, I've had the privilege to work on a diverse range of projects that have honed my skills and allowed me to contribute to different works during my internship at Itahari International College.
-
-## Projects
-
-Here are some highlights from my portfolio:
-
-### Blog it
-Designed and built a blog web application called “Blog It” using Laravel having CRUD operation.
-
-Replicated frontend of an e-commerce website as an outcome of learning frontend development.
-
-Worked with front-end developers simultaneously to increase the productivity of each project.
-
-Developed soft skills like time management and teamwork with the use of team collaboration platforms like Slack and Trello.
-
-### ...
-
-You can find more of my projects in my profile.
-
-## Skills
-
-- PHP, Laravel
-- Kotlin, Android Studio
-- Python
-- mySQL
-
-
-## Contact
-
-I'm always excited to connect and collaborate. Feel free to reach out to me at [raiparasmani1@gmail.com]. You can also find me on [LinkedIn]([https://www.linkedin.com/in/yourusername](https://www.linkedin.com/in/paras-mani-rai-60aaa41b2/)).
-
-Thank you for visiting my portfolio!
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
