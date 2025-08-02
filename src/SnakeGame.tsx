@@ -72,40 +72,6 @@ const SnakeGame: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Optional: Swipe Gesture Controls (Mobile)
-  /*
-  useEffect(() => {
-    const handleTouchStart = (e: TouchEvent) => {
-      const touch = e.touches[0];
-      touchStartRef.current = { x: touch.clientX, y: touch.clientY };
-    };
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      if (!touchStartRef.current) return;
-      const touch = e.changedTouches[0];
-      const dx = touch.clientX - touchStartRef.current.x;
-      const dy = touch.clientY - touchStartRef.current.y;
-
-      if (Math.abs(dx) > Math.abs(dy)) {
-        if (dx > 0 && moveRef.current !== 'LEFT') setDirection('RIGHT');
-        else if (dx < 0 && moveRef.current !== 'RIGHT') setDirection('LEFT');
-      } else {
-        if (dy > 0 && moveRef.current !== 'UP') setDirection('DOWN');
-        else if (dy < 0 && moveRef.current !== 'DOWN') setDirection('UP');
-      }
-
-      touchStartRef.current = null;
-    };
-
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchend', handleTouchEnd);
-    return () => {
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, []);
-  */
-
   useEffect(() => {
     if (gameOver) return;
 

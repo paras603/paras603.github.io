@@ -15,6 +15,7 @@ const TicTacToe: React.FC = () => {
     setBoard(newBoard);
     setXIsNext(!xIsNext);
   }
+  
 
   function restartGame() {
     setBoard(Array(9).fill(null));
