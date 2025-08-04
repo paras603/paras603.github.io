@@ -11,8 +11,10 @@
     "deploy": "npm run build"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@lottiefiles/dotlottie-react": "^0.14.4",
     "@tailwindcss/vite": "^4.1.11",
+    "framer-motion": "^12.23.12",
     "lottie-react": "^2.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

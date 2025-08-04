@@ -4,6 +4,7 @@ import About from '../components/about';
 import Projects from '../components/Projects';
 import Contact from '../components/contact';
 import Footer from '../components/Footer';
+import { motion } from "framer-motion";
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -14,7 +15,18 @@ const Dashboard: React.FC = () => {
 
       {/* Home Section */}
       <section id='home' className='p-10 text-center'>
-        <h1 className='text-4xl font-bold mb-4'>welcome to my portfolio</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="text-5xl font-extrabold tracking-tight"
+        >
+          Hi, I'm Paras 👋
+        </motion.h1>
+        <p className="text-xl text-gray-500 mt-4 max-w-xl mx-auto">
+          I build interactive, accessible, and user-focused web applications.
+        </p>
+
         <p className='text-lg'>This is the begining of something awesome</p>
       </section>
 
