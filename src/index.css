@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+/* styles/globals.css */
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+
+
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+

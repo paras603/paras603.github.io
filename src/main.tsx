@@ -8,10 +8,7 @@ import ThankYou from './pages/ThankYou.js';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App />} />
-        <Route path='/thank-you' element={<ThankYou />} />
-      </Routes>
+      <App />
     </BrowserRouter>
   </StrictMode>
 )
