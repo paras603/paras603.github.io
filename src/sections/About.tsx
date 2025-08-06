@@ -17,27 +17,28 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative bg-gradient-to-b from-gray-50 via-white to-gray-50 py-20 px-6 lg:px-24 text-gray-500"
+      className="relative py-20 px-16 md:px-20 lg:px-56 bg-gradient-to-b from-gray-50 via-white to-gray-50  text-gray-500"
     >
-      <div className="max-w-6xl mx-auto">
+    {/* content here */}
+          <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-900 font-space text-left">
           About Me
         </h2>
 
         {/* Content */}
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-center gap-12 justify-between">
           {/* Lottie Animation */}
-<div className="w-44 h-44 md:w-56 md:h-56 lg:w-64 lg:h-64 flex items-center justify-center hover:scale-105 transition-transform duration-500 relative group">
-  <div className="absolute inset-0 rounded-full blur-2xl opacity-20 bg-cyan-300 group-hover:opacity-40 transition duration-500 pointer-events-none"></div>
-  <Lottie options={lottieOptions} />
-</div>
+          <div className="w-44 h-44 md:w-56 md:h-56 lg:w-64 lg:h-64 flex items-center justify-center hover:scale-105 transition-transform duration-500 relative group">
+            <div className="absolute inset-0 rounded-full blur-2xl opacity-20 bg-cyan-300 group-hover:opacity-40 transition duration-500 pointer-events-none"></div>
+            <Lottie options={lottieOptions} />
+          </div>
 
 
 
           {/* Bio */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
-            <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed font-poppins">
+            <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed font-poppins  text-justify">
               I'm <span className="font-semibold text-cyan-600">Paras</span> — a
               developer, designer, and engineer passionate about crafting elegant,
               performant digital experiences. I thrive at the intersection of clean
@@ -98,7 +99,8 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+</section>
+
   );
 };
 

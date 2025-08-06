@@ -1,0 +1,37 @@
+import { IconType } from 'react-icons';
+import {
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaCss3Alt,
+  FaJsSquare,
+  FaPython,
+  FaGitAlt,
+  FaDocker,
+  FaAws,
+  FaLinux,
+  FaHtml5,
+  FaJava,
+} from 'react-icons/fa';
+
+export interface Skill {
+  name: string;
+  level?: string;
+  proficiency: number; // 0-100
+  icon: IconType;
+}
+
+export const skills: Skill[] = [
+  { name: 'React', proficiency: 90, level: 'Expert', icon: FaReact },
+  { name: 'TypeScript', proficiency: 85, level: 'Advanced', icon: FaJsSquare },
+  { name: 'Node.js', proficiency: 75, level: 'Intermediate', icon: FaNodeJs },
+  { name: 'CSS3', proficiency: 80, level: 'Advanced', icon: FaCss3Alt },
+  { name: 'Databases', proficiency: 70, level: 'Intermediate', icon: FaDatabase },
+  { name: 'Python', proficiency: 65, level: 'Intermediate', icon: FaPython },
+  { name: 'Git', proficiency: 85, level: 'Advanced', icon: FaGitAlt },
+  { name: 'Docker', proficiency: 60, level: 'Intermediate', icon: FaDocker },
+  { name: 'AWS', proficiency: 55, level: 'Beginner', icon: FaAws },
+  { name: 'Linux', proficiency: 75, level: 'Intermediate', icon: FaLinux },
+  { name: 'HTML5', proficiency: 90, level: 'Expert', icon: FaHtml5 },
+  { name: 'Java', proficiency: 50, level: 'Beginner', icon: FaJava },
+];

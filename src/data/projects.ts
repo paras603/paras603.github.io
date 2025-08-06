@@ -29,7 +29,7 @@ export const projectList: Project[] = [
     id: 2,
     slug: 'chat-with-coffee',
     title: "Chat with Coffee",
-    description: "A real-time chat app with a warm design inspired by coffee shops. Built using Firebase and React.",
+    description: "A real-time chat app with a warm design inspired by coffee shops. Built using Firebase and React. A real-time chat app with a warm design inspired by coffee shops. Built using Firebase and React. A real-time chat app with a warm design inspired by coffee shops. Built using Firebase and React.A real-time chat app with a warm design inspired by coffee shops. Built using Firebase and React.",
 
     date: "May 2024",
     imageUrl: "/assets/chat-coffee.jpg",

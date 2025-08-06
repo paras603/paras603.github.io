@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="bg-gradient-to-b from-gray-50 via-white to-gray-50 py-24 px-6 md:px-12 lg:px-32 text-gray-700"
+      className="py-20 px-16 md:px-20 lg:px-56 bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-700"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}

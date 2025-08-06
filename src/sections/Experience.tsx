@@ -1,0 +1,82 @@
+import { motion } from 'framer-motion';
+import { experiences } from '../data/experiences';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+
+const Experience: React.FC = () => {
+  return (
+    <section
+      id="experience"
+      className="bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-800 py-20 px-6 sm:px-10 md:px-20 lg:px-56"
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* Section Header */}
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold mb-12 text-gray-900 font-space"
+        >
+          Experience
+        </motion.h2>
+
+        {/* Timeline */}
+        <div className="relative border-l border-cyan-600">
+          {experiences.map((exp, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.2 }}
+              viewport={{ once: true }}
+              className="mb-12 pl-6 relative"
+            >
+              {/* Dot and Icon */}
+              <div className="absolute left-[-14px] top-1 bg-cyan-600 w-6 h-6 rounded-full flex items-center justify-center text-white shadow-lg">
+                <exp.icon size={14} />
+
+              </div>
+
+              {/* Content */}
+              <div className="bg-white shadow-md rounded-xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
+                <h3 className="text-xl font-semibold text-cyan-700">{exp.role}</h3>
+                <div className='flex items-center gap-2 text-gray-500 font-medium'>
+                    <p>{exp.company}</p>
+                    {exp.website && (
+                        <a
+                        href={exp.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-gray-800 transition"
+                        >
+                        <FaExternalLinkAlt className="inline-block text-sm" />
+                        </a>
+                    )}
+                </div>
+                
+                <span className="text-sm text-gray-400">{exp.period}</span>
+                <p className="mt-3 text-gray-700 leading-relaxed">{exp.description}</p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                    { exp.techStack.map((tech, idx) => (
+                        <span 
+                            key={idx}
+                            className={`px-2 py-1 text-xs font-medium rounded
+                                    ${idx % 2 === 0
+                                    ? 'bg-cyan-100 text-cyan-700'
+                                    : 'bg-gray-100 text-gray-700'
+                                    }`}
+                        >
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;

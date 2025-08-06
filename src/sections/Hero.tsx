@@ -94,8 +94,9 @@ const Hero: React.FC = () => {
   return (
 <section
   id="home"
-  className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-center gap-12 px-6 lg:px-2 py-6 pb-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-500"
+  className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-center gap-12 px-16 lg:px-2 py-6 pb-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-500"
 >
+  
 
 
       {/* Lottie Animation */}

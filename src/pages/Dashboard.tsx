@@ -1,11 +1,14 @@
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import About from '../sections/About';
-import Projects from '../sections/Projects';
+import Project from '../sections/Project';
 import Contact from '../sections/Contact';
 import Footer from '../components/Footer';
 import { motion } from "framer-motion";
 import Hero from '../sections/Hero';
+import Experience from '../sections/Experience';
+import Skill from '../sections/Skill';
+import Testimonial from '../sections/Testimonial';
 
 const Dashboard: React.FC = () => {
   const navigate = useNavigate();
@@ -13,20 +16,13 @@ const Dashboard: React.FC = () => {
   return (
     <div className='min-h-screen bg-gray-100 text-black'>
       <Navbar />
-
       <Hero/>
-
-
-      {/* About Section */}
       <About />
-
-      {/* Project section */}
-      <Projects />
-
-      {/* contact section */}
+      <Experience />
+      <Skill /> 
+      <Project />
+      <Testimonial/>
       <Contact />
-
-      {/* footer serction */}
       <Footer />
     </div>
   );
