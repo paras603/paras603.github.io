@@ -1,16 +1,25 @@
 import React from 'react';
 import { testimonials } from '../data/testimonials';
+import { motion } from 'framer-motion';
 
 const Testimonial: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="bg-gradient-to-b from-white to-gray-50 py-20 px-6 sm:px-10 md:px-20 lg:px-56 text-gray-800"
+      className="bg-gray-50 py-20 px-6 sm:px-10 md:px-20 lg:px-56 text-gray-800"
     >
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-gray-900 font-space text-center">
-          Testimonials
-        </h2>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto"
+      >
+        <div className='mb-12'>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
+            Testimonials
+          </h2>
+        </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, idx) => (
@@ -35,7 +44,7 @@ const Testimonial: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

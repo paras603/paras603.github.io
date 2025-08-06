@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-gradient-to-b from-white via-gray-50 to-white shadow-sm px-16 md:px-20 lg:px-56 py-4 sticky top-0 z-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo / Title */}
-        <div className="text-xl font-bold text-cyan-700">MyPortfolio</div>
+        <div className="text-xl font-bold text-cyan-700">Paras Mani Rai</div>
 
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex gap-6 text-sm font-medium text-gray-700">

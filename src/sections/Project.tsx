@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projectList } from '../data/projects';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,34 +12,43 @@ import 'swiper/css/pagination';
 
 SwiperCore.use([Pagination]);
 
+
+
 const Project: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const project = projectList[currentIndex];
+  const navigate = useNavigate();
 
 return (
     <section
       id="projects"
       className="bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-900 py-20 px-6 sm:px-10 md:px-20 lg:px-56"
     >
-      <div className="max-w-6xl mx-auto">
-      <div className="flex items-center justify-between mb-10">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto"
+      >
+      <div className="flex items-center justify-between mb-12">
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold font-space text-gray-900">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
           Projects
         </h2>
 
         {/* All Projects Link */}
-        <a
-          href="/projects"
-          className="text-cyan-600 font-medium text-lg hover:text-cyan-800 transition-colors border border-cyan-600 px-2 py-1 rounded-full hover:border-cyan-800"
+        <Link 
+          to='/projects'
+          className="text-cyan-600 font-medium text-lg hover:text-cyan-800 transition-colors border border-cyan-600 px-3 py-1 rounded-full hover:border-cyan-800"
         >
           All projects
-        </a>
+        </Link>
       </div>
 
 
         {/* Mobile Swiper */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Swiper
             modules={[Pagination]}
             pagination={{ clickable: true }}
@@ -52,7 +61,8 @@ return (
 
             {projectList.map((proj: Project) => (
               <SwiperSlide key={proj.id} >
-                <div className="space-y-6">
+                <div className="space-y-6"
+                      onClick={() => navigate(`/projects/${proj.slug}`)}>
                   <img
                     src={proj.imageUrl}
                     alt={proj.title}
@@ -61,7 +71,11 @@ return (
                   />
                   <div className='flex justify-start'>
 
-                    <h3 className="text-2xl font-bold text-cyan-700">{proj.title}</h3>
+                    <h3 
+                      className="text-2xl font-bold text-cyan-700"
+                    >
+                      {proj.title}
+                    </h3>
                                       {/* GitHub */}
                       <a
                         href={project.githubUrl}
@@ -99,7 +113,8 @@ return (
         </div>
 
         {/* Desktop: Show one project with left (text) and right (image) */}
-        <div className="hidden md:flex flex-col md:flex-row items-center gap-12 text-justify">
+        <div className="hidden lg:flex flex-col md:flex-row items-center gap-12 text-justify cursor-pointer p-4 shadow-lg hover:shadow-xl"
+                      onClick={() => navigate(`/projects/${proj.slug}`)}>
           {/* Left Panel */}
           <AnimatePresence mode="wait">
             <motion.img
@@ -125,7 +140,7 @@ return (
               transition={{ duration: 0.6 }}
               className="md:w-[61.8%] space-y-6"
             >
-              <h3 className="text-3xl font-bold text-cyan-700">{project.title}</h3>
+              <h3 className="text-3xl font-bold text-cyan-700 " onClick={() => navigate(`/projects/${project.slug}`)}>{project.title}</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 {project.description}
               </p>
@@ -173,7 +188,7 @@ return (
 
         {/* Navigation Dots */}
         {/* Desktop navigation dots only */}
-        <div className="hidden md:flex justify-center mt-12 gap-4">
+        <div className="hidden lg:flex justify-center mt-12 gap-4">
           {projectList.map((_, i) => (
             <button
               key={i}
@@ -188,7 +203,7 @@ return (
           ))}
         </div>
 
-      </div>
+      </motion.div>
     </section>
   );
 };

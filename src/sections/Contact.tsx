@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
       >
         {/* Title Section */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-space text-left mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
             Contact Me
           </h2>
           <p className="text-gray-600 text-left text-lg md:text-xl max-w-2xl">

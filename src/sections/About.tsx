@@ -1,5 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
+import { motion } from "framer-motion";
 import profileLottie from '../../public/assets/profile-lottie.json'; // adjust path if needed
 
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -20,11 +21,22 @@ const About: React.FC = () => {
       className="relative py-20 px-16 md:px-20 lg:px-56 bg-gradient-to-b from-gray-50 via-white to-gray-50  text-gray-500"
     >
     {/* content here */}
-          <div className="max-w-6xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="max-w-6xl mx-auto"
+      >
         {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-900 font-space text-left">
-          About Me
-        </h2>
+        <div className="mb-12 flex items-center gap-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
+            About Me
+          </h2>
+        </div>
+
+
+
 
         {/* Content */}
         <div className="flex flex-col md:flex-row items-center gap-12 justify-between">
@@ -98,7 +110,7 @@ const About: React.FC = () => {
 
           </div>
         </div>
-      </div>
+      </motion.div>
 </section>
 
   );

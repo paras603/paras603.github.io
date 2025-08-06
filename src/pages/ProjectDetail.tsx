@@ -1,43 +1,121 @@
-import { useParams } from "react-router-dom";
-import { projectList } from "../data/projects";
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { projectList } from '../data/projects';
+import { FaExternalLinkAlt, FaGithub, FaArrowLeft } from 'react-icons/fa';
 
 const ProjectDetail: React.FC = () => {
   const { slug } = useParams();
   const project = projectList.find((p) => p.slug === slug);
 
-  if (!project) return <div className="p-10 text-red-600">Project not found.</div>;
+  if (!project) {
+    return (
+      <div className="py-32 text-center text-gray-600">
+        <h2 className="text-2xl font-bold">Project not found</h2>
+        <Link to="/projects" className="text-cyan-600 hover:underline mt-4 inline-block">
+          ← Back to All Projects
+        </Link>
+      </div>
+    );
+  }
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12 text-gray-800">
-      <h1 className="text-4xl font-bold mb-6">{project.title}</h1>
-      <img
-        src={project.imageUrl}
-        alt={project.title}
-        className="w-full rounded-lg shadow-md mb-6"
-      />
-      <p className="mb-4 text-lg">{project.description}</p>
-      <div className="text-sm text-gray-600 mb-4">
-        <span>🗓 {project.date}</span> • <span>🛠 {project.techStack.join(", ")}</span>
+    <section className="bg-gray-50 text-gray-900 py-20 px-6 sm:px-10 md:px-16 lg:px-32 font-sans">
+      <div className="max-w-4xl mx-auto">
+        {/* Back button */}
+        <Link to="/projects" className="text-cyan-600 hover:text-cyan-800 inline-flex items-center mb-8 font-sans">
+          <FaArrowLeft className="mr-2" /> All Projects
+        </Link>
+
+        {/* Headline */}
+        <h1 className="text-5xl font-bold leading-tight mb-6 text-gray-900 tracking-tight">
+          {project.title}
+        </h1>
+
+        {/* Date & stack */}
+        <div className="text-sm text-gray-500 mb-10 border-b pb-4 font-sans">
+          <span className="mr-6">{project.date}</span>
+          <span>🛠 {project.techStack.join(', ')}</span>
+        </div>
+
+        {/* Hero image */}
+        {project.images?.[0] && (
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className="w-full rounded-md shadow-md mb-8"
+          />
+        )}
+
+        {/* Article content in 2-column layout */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-lg leading-relaxed">
+          <div className="md:col-span-2 space-y-6">
+            <p>{project.description}</p>
+
+            {/* Add any extended description here */}
+            <p>
+              This project showcases a blend of modern frontend development and user-centric design.
+              It was built with care, focusing on responsive performance and clean user experience.
+              Technologies like {project.techStack.slice(0, 2).join(" and ")} were leveraged to ensure
+              high performance and maintainability.
+            </p>
+
+            {/* Extra image 1 */}
+            {project.images?.[1] && (
+              <img
+                src={project.images[1]}
+                alt={`${project.title} - additional`}
+                className="rounded-md shadow mt-6"
+              />
+            )}
+
+            <p>
+              Throughout the development process, we emphasized reusability, accessibility, and scalability.
+              Whether viewed on desktop or mobile, the project remains seamless and intuitive.
+            </p>
+
+            {/* Extra image 2 */}
+            {project.images?.[2] && (
+              <img
+                src={project.images[2]}
+                alt={`${project.title} - screenshot`}
+                className="rounded-md shadow mt-6"
+              />
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-4">
+            <div className="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+              <h3 className="text-cyan-700 font-semibold mb-2">Project Info</h3>
+              <ul className="text-sm text-gray-700 space-y-1">
+                <li><strong>Date:</strong> {project.date}</li>
+                <li><strong>Stack:</strong> {project.techStack.join(', ')}</li>
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 text-cyan-600 border border-cyan-600 rounded-lg hover:bg-cyan-50 transition"
+              >
+                <FaGithub /> GitHub
+              </a>
+
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition"
+              >
+                <FaExternalLinkAlt /> Live Site
+              </a>
+            </div>
+          </aside>
+        </div>
       </div>
-      <div className="flex gap-4">
-        <a
-          href={project.githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 border border-cyan-600 text-cyan-600 rounded-md hover:bg-cyan-50 transition"
-        >
-          GitHub
-        </a>
-        <a
-          href={project.liveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 border border-cyan-600 text-cyan-600 rounded-md hover:bg-cyan-50 transition"
-        >
-          Live Site
-        </a>
-      </div>
-    </div>
+    </section>
   );
 };
 

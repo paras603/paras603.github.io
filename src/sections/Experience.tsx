@@ -6,18 +6,15 @@ const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-800 py-20 px-6 sm:px-10 md:px-20 lg:px-56"
+      className="relative py-20 px-16 md:px-20 lg:px-56 bg-gradient-to-b from-gray-50 via-white to-gray-50  text-gray-500"
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold mb-12 text-gray-900 font-space"
-        >
-          Experience
-        </motion.h2>
+        <div className="mb-12 flex items-center gap-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
+            Experience
+          </h2>
+        </div>
 
         {/* Timeline */}
         <div className="relative border-l border-cyan-600">

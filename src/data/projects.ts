@@ -9,6 +9,7 @@ export interface Project {
   backgroundColor: string;
   techStack: string [];
   date: string;
+  images?: string [];
 }
 
 export const projectList: Project[] = [
@@ -17,13 +18,18 @@ export const projectList: Project[] = [
     slug: 'pokenmon-library',
     title: "Pokemon Library",
     description: "Explore your favorite Pokemon using a beautiful UI and data fetched from a public API.",
-        techStack: ["React", "D3.js", "Tailwind CSS", "API"],
+        techStack: ["React", "D3.js", "Tailwind CSS"],
 
     date: "May 2024",
-    imageUrl: "/assets/pokemon.jpg",
+    imageUrl: "/assets/images/pokemon/pokemon.jpg",
     githubUrl: "https://github.com/paras603",
     liveUrl: "https://parasmanirai.com.np",
     backgroundColor: "bg-gradient-to-r from-purple-500 to-pink-500",
+    images: [
+      "/assets/images/pokemon/project-hero.jpg",
+      "/assets/images/pokemon/project-feature1.jpg",
+      "/assets/images/pokemon/project-feature2.jpg"
+    ]
   },
   {
     id: 2,
@@ -36,7 +42,7 @@ export const projectList: Project[] = [
         techStack: ["React", "D3.js", "Tailwind CSS", "API"],
     githubUrl: "https://github.com/paras603",
     liveUrl: "https://parasmanirai.com.np",
-    backgroundColor: "bg-gradient-to-r from-yellow-400 to-orange-500",
+    backgroundColor: "bg-gradient-to-r from-yellow-400 to-orange-500",    
   },
   {
     id: 3,
@@ -49,5 +55,10 @@ export const projectList: Project[] = [
     githubUrl: "https://github.com/paras603",
     liveUrl: "https://parasmanirai.com.np",
     backgroundColor: "bg-gradient-to-r from-sky-400 to-indigo-600",
+    images: [
+      "/images/project-hero.jpg",
+      "/images/project-feature1.jpg",
+      "/images/project-feature2.jpg"
+    ]
   },
 ];

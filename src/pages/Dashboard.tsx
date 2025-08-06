@@ -23,7 +23,7 @@ const Dashboard: React.FC = () => {
       <Project />
       <Testimonial/>
       <Contact />
-      <Footer />
+
     </div>
   );
 };
