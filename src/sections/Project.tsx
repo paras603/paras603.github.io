@@ -42,7 +42,7 @@ return (
           to='/projects'
           className="text-cyan-600 font-medium text-lg hover:text-cyan-800 transition-colors border border-cyan-600 px-3 py-1 rounded-full hover:border-cyan-800"
         >
-          All projects
+          View All
         </Link>
       </div>
 
