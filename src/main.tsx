@@ -2,9 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.js'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import ThankYou from './pages/ThankYou.js';
-import Footer from './components/Footer.js'
+import { BrowserRouter} from 'react-router-dom'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

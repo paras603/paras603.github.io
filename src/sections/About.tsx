@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import { motion } from "framer-motion";
-import profileLottie from '../../public/assets/profile-lottie.json'; // adjust path if needed
+import profileLottie from '../assets/animation/profile-lottie.json';
 
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -59,7 +59,7 @@ const About: React.FC = () => {
 
               {/* Social Icons */}
             <div className="mt-8 flex flex-wrap gap-6 mb-6 text-cyan-700 text-lg font-medium">
-              <a href="mailto:paris@example.com" className="hover:text-cyan-900 flex items-center gap-2">
+              <a href="mailto:raiparasmani1@gmail.com" className="hover:text-cyan-900 flex items-center gap-2">
                 <FaEnvelope />
                 Email
               </a>
@@ -67,7 +67,7 @@ const About: React.FC = () => {
                 <FaGithub />
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/paras603" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-900 flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/paras-mani-rai-a6363b28b/" target="_blank" rel="noopener noreferrer" className="hover:text-cyan-900 flex items-center gap-2">
                 <FaLinkedin />
                 LinkedIn
               </a>
@@ -76,16 +76,16 @@ const About: React.FC = () => {
             {/* Feature Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-600 mb-6">
               <div className="bg-white shadow-md rounded-lg px-4 py-3 border border-gray-100 hover:shadow-lg transition">
-                🚀 Frontend & Fullstack Development
+                Fullstack Development
               </div>
               <div className="bg-white shadow-md rounded-lg px-4 py-3 border border-gray-100 hover:shadow-lg transition">
-                🎨 UI/UX & Design Systems
+                UI/UX & Design Systems
               </div>
               <div className="bg-white shadow-md rounded-lg px-4 py-3 border border-gray-100 hover:shadow-lg transition">
-                🛠️ React, TypeScript, Tailwind CSS
+                IT Support
               </div>
               <div className="bg-white shadow-md rounded-lg px-4 py-3 border border-gray-100 hover:shadow-lg transition">
-                📚 Constantly learning new technologies
+                Software Development
               </div>
             </div>
 

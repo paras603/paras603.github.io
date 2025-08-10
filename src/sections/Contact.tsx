@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import Lottie from "react-lottie";
 import { FaCheckCircle, FaTimesCircle, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
-import contactUsAnimation from "../../public/assets/contact-us-lottie.json";
+import contactUsAnimation from "../assets/animation/contact-us-lottie.json";
 
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);

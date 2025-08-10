@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { experiences } from '../data/experiences';
-import { FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaTasks } from 'react-icons/fa';
 
 const Experience: React.FC = () => {
   return (
@@ -37,21 +37,25 @@ const Experience: React.FC = () => {
               <div className="bg-white shadow-md rounded-xl p-6 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition">
                 <h3 className="text-xl font-semibold text-cyan-700">{exp.role}</h3>
                 <div className='flex items-center gap-2 text-gray-500 font-medium'>
-                    <p>{exp.company}</p>
                     {exp.website && (
                         <a
                         href={exp.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-gray-800 transition"
+                        className="hover:text-gray-800 transition inline-flex items-center space-x-1"
                         >
-                        <FaExternalLinkAlt className="inline-block text-sm" />
+                          <p>{exp.company}</p>
+                        <FaExternalLinkAlt className="text-sm" />
                         </a>
                     )}
                 </div>
                 
                 <span className="text-sm text-gray-400">{exp.period}</span>
-                <p className="mt-3 text-gray-700 leading-relaxed">{exp.description}</p>
+                <p className="list-disc list-inside mt-3 text-gray-700 space-y-2">
+                  {exp.description.map((task: string, idx: number) => (
+                    <li key={idx}>{task}</li>
+                  ))}
+                </p>
                 <div className="flex flex-wrap gap-2 mt-4">
                     { exp.techStack.map((tech, idx) => (
                         <span 

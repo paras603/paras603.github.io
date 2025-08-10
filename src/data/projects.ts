@@ -1,3 +1,5 @@
+import pokemonImage from '../assets/images/pokemon/pokemon.jpg';
+
 export interface Project {
   id: number;
   slug: string;
@@ -15,13 +17,12 @@ export interface Project {
 export const projectList: Project[] = [
   {
     id: 1,
-    slug: 'pokenmon-library',
-    title: "Pokemon Library",
-    description: "Explore your favorite Pokemon using a beautiful UI and data fetched from a public API.",
-        techStack: ["React", "D3.js", "Tailwind CSS"],
-
+    slug: 'pokemon-library',
+    title: "Pokémon Library",
+    description: "The Pokémon Library is a simple web application that lets users browse and explore information about different Pokémon. It connects to a public API to fetch data such as names, images, types, and abilities, and displays them in an easy-to-read format. The goal of the project was to practice working with external APIs and improve frontend development skills. This project also helped me understand how to handle asynchronous data, manage user interactions, and structure components for better readability and reusability. It was a fun way to combine programming with a familiar theme, making the learning process more engaging.",
+    techStack: ["React", "D3.js", "Tailwind CSS"],
     date: "May 2024",
-    imageUrl: "/assets/images/pokemon/pokemon.jpg",
+    imageUrl: pokemonImage,
     githubUrl: "https://github.com/paras603",
     liveUrl: "https://parasmanirai.com.np",
     backgroundColor: "bg-gradient-to-r from-purple-500 to-pink-500",

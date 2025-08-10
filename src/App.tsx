@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import ThankYou from './pages/ThankYou';
 import ProjectDetail from './pages/ProjectDetail';
 import Dashboard from './pages/Dashboard';
 import AllProjects from './pages/AllProjects';
@@ -11,7 +10,6 @@ const App: React.FC = () => {
       <Route path="/" element={<><Dashboard/><Footer/></>} />
       <Route path='/projects' element={ <><AllProjects /><Footer/></>  } />
       <Route path="/projects/:slug" element={<> <ProjectDetail/> <Footer /></>} />
-      <Route path="/thank-you" element={<ThankYou />} />
     </Routes>
   );
 };

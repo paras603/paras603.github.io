@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         {/* Social Icons */}
         <div className="flex gap-6 text-lg text-gray-500">
           <a
-            href="mailto:paras@example.com"
+            href="mailto:raiparasmani1@gmail.com"
             className="hover:text-cyan-600 transition-colors"
             aria-label="Email"
           >
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/paras603"
+            href="https://www.linkedin.com/in/paras-mani-rai-a6363b28b/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-600 transition-colors"

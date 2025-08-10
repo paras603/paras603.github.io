@@ -52,7 +52,7 @@ const AllProjects: React.FC = () => {
                         placeholder="Search by title..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-cyan-500 transition bg-white"
+                        className="w-full pl-10 pr-4 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-cyan-500 transition bg-white"
                     />
                 </div>
 

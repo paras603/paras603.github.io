@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Lottie from 'react-lottie';
-import heroAnimation from '../../public/assets/hero-lottie.json';
+import heroAnimation from '../assets/animation/hero-lottie.json';
 
 const lines = [
   'echo "Hello, world" ',
@@ -96,9 +96,6 @@ const Hero: React.FC = () => {
   id="home"
   className="relative min-h-[90vh] flex flex-col lg:flex-row items-center justify-center gap-12 px-16 lg:px-2 py-6 pb-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-500"
 >
-  
-
-
       {/* Lottie Animation */}
       <motion.div
         className="w-64 sm:w-80 md:w-86 lg:max-w-lg"
