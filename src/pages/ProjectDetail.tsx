@@ -39,11 +39,13 @@ const ProjectDetail: React.FC = () => {
 
         {/* Hero image */}
         {project.images?.[0] && (
-          <img
-            src={project.images[0]}
-            alt={project.title}
-            className="w-full rounded-md shadow-md mb-8"
-          />
+          <div className="w-full aspect-[16/9] mb-8 rounded-md overflow-hidden shadow-md">
+            <img
+              src={project.images[0]}
+              alt={project.title}
+              className="w-full h-full object-contain object-center"
+            />
+          </div>
         )}
 
         {/* Article content in 2-column layout */}
@@ -61,11 +63,13 @@ const ProjectDetail: React.FC = () => {
 
             {/* Extra image 1 */}
             {project.images?.[1] && (
-              <img
-                src={project.images[1]}
-                alt={`${project.title} - additional`}
-                className="rounded-md shadow mt-6"
-              />
+              <div className="aspect-[16/9] rounded-md overflow-hidden shadow mt-6">
+                <img
+                  src={project.images[1]}
+                  alt={`${project.title} - additional`}
+                  className="w-full h-full object-contain object-center"
+                />
+              </div>
             )}
 
             <p>
@@ -75,12 +79,15 @@ const ProjectDetail: React.FC = () => {
 
             {/* Extra image 2 */}
             {project.images?.[2] && (
-              <img
-                src={project.images[2]}
-                alt={`${project.title} - screenshot`}
-                className="rounded-md shadow mt-6"
-              />
+              <div className="aspect-[16/9] rounded-md overflow-hidden shadow mt-6">
+                <img
+                  src={project.images[2]}
+                  alt={`${project.title} - screenshot`}
+                  className="w-full h-full object-contain object-center"
+                />
+              </div>
             )}
+
           </div>
 
           {/* Sidebar */}
@@ -102,15 +109,16 @@ const ProjectDetail: React.FC = () => {
               >
                 <FaGithub /> GitHub
               </a>
-
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition"
-              >
-                <FaExternalLinkAlt /> Live Site
-              </a>
+              { project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition"
+                >
+                  <FaExternalLinkAlt /> Live Site
+                </a>
+              )}
             </div>
           </aside>
         </div>

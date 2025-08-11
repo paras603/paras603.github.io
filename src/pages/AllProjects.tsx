@@ -117,15 +117,17 @@ const AllProjects: React.FC = () => {
                   <FaGithub /> GitHub
                 </a>
 
-                <a
-                  href={proj.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-600 text-white text-sm rounded hover:bg-cyan-700 transition"
-                >
-                  <FaExternalLinkAlt /> Live
-                </a>
+                { proj.liveUrl && (
+                  <a
+                    href={proj.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 bg-cyan-600 text-white text-sm rounded hover:bg-cyan-700 transition"
+                  >
+                    <FaExternalLinkAlt /> Live
+                  </a>
+                )}
               </div>
             </div>
           ))}

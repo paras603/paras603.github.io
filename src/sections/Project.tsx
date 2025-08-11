@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projectList } from '../data/projects';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaCalendarAlt, FaTools } from 'react-icons/fa';
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
@@ -76,35 +76,45 @@ return (
                     >
                       {proj.title}
                     </h3>
-                                      {/* GitHub */}
+                      {/* GitHub */}
                       <a
-                        href={project.githubUrl}
+                        href={proj.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`${project.title} GitHub Repository`}
+                        aria-label={`${proj.title} GitHub Repository`}
                         className="inline-flex items-center gap-2 pl-4 text-cyan-600 hover:text-cyan-700 transition-colors text-base"
                       >
                         <FaGithub className="text-xl" />
                         <span className="hidden sm:inline">GitHub</span>
                       </a>
-
                       {/* Live Site */}
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${project.title} Live Website`}
-                        className="inline-flex items-center gap-2 pl-4 text-cyan-600 hover:text-cyan-700 transition-colors text-base"
-                      >
-                        <FaExternalLinkAlt className="text-sm" />
-                        <span className="hidden sm:inline">Live</span>
-                      </a>
+                      { proj.liveUrl && (
+
+                        <a
+                          href={proj.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${proj.title} Live Website`}
+                          className="inline-flex items-center gap-2 pl-4 text-cyan-600 hover:text-cyan-700 transition-colors text-base"
+                        >
+                          <FaExternalLinkAlt className="text-sm" />
+                          <span className="hidden sm:inline">Live</span>
+                        </a>
+                      )
+
+                      }
                   </div>
                   <p className="text-gray-700 leading-relaxed">{proj.description}</p>
 
                   <div className="text-sm text-gray-500 flex gap-4 flex-wrap">
-                    <span>📅 {proj.date}</span>
-                    <span>🛠 {proj.techStack.join(", ")}</span>
+                    <span className="inline-flex items-center gap-1 text-sm text-gray-500">
+                      <FaCalendarAlt className="text-base" />
+                      {proj.date}
+                    </span>
+                    <span className="inline-flex items-center gap-1 text-sm text-gray-500">
+                      <FaTools className='text-base'/>
+                      {proj.techStack.join(", ")}
+                    </span>
                   </div>
                 </div>
               </SwiperSlide>
@@ -114,74 +124,65 @@ return (
 
         {/* Desktop: Show one project with left (text) and right (image) */}
         {/* Desktop: Grid view of projects */}
-<div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-10">
-  {projectList.map((proj: Project) => (
-    <motion.div
-      key={proj.id}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="cursor-pointer border border-gray-200 shadow-md hover:shadow-xl rounded-xl overflow-hidden transition-all"
-      onClick={() => navigate(`/projects/${proj.slug}`)}
-    >
-      <img
-        src={proj.imageUrl}
-        alt={proj.title}
-        className="w-full h-48 object-cover"
-        loading="lazy"
-      />
-      <div className="p-5 space-y-3">
-        <h3 className="text-xl font-bold text-cyan-700">{proj.title}</h3>
-        <p className="text-gray-700 text-sm line-clamp-3">{proj.description}</p>
-        <div className="text-sm text-gray-500 flex gap-2 flex-wrap">
-          <span>📅 {proj.date}</span>
-          <span>🛠 {proj.techStack.join(", ")}</span>
-        </div>
-        <div className="flex gap-4 pt-2">
-          <a
-            href={proj.githubUrl}
-            onClick={(e) => e.stopPropagation()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-cyan-600 hover:text-cyan-700 text-sm"
-          >
-            <FaGithub className="mr-1" />
-            GitHub
-          </a>
-          <a
-            href={proj.liveUrl}
-            onClick={(e) => e.stopPropagation()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-cyan-600 hover:text-cyan-700 text-sm"
-          >
-            <FaExternalLinkAlt className="mr-1" />
-            Live
-          </a>
-        </div>
-      </div>
-    </motion.div>
-  ))}
-</div>
-
-
-        {/* Navigation Dots */}
-        {/* Desktop navigation dots only */}
-        {/* <div className="hidden lg:flex justify-center mt-12 gap-4">
-          {projectList.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              aria-label={`Go to project ${i + 1}`}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                i === currentIndex
-                  ? "bg-cyan-600 shadow-lg scale-110"
-                  : "bg-cyan-200/50 hover:bg-cyan-400"
-              }`}
-            />
+        <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-10">
+          {projectList.map((proj: Project) => (
+            <motion.div
+              key={proj.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="cursor-pointer border border-gray-200 shadow-md hover:shadow-xl rounded-xl overflow-hidden transition-all"
+              onClick={() => navigate(`/projects/${proj.slug}`)}
+            >
+              <img
+                src={proj.imageUrl}
+                alt={proj.title}
+                className="w-full h-48 object-cover"
+                loading="lazy"
+              />
+              <div className="p-5 space-y-3">
+                <h3 className="text-xl font-bold text-cyan-700">{proj.title}</h3>
+                <p className="text-gray-700 text-sm line-clamp-3">{proj.description}</p>
+                <div className="text-sm text-gray-500 flex gap-2 flex-wrap">
+                 <span className="inline-flex items-center gap-1 text-sm text-gray-500">
+                  <FaCalendarAlt className="text-base" />
+                  {proj.date}
+                </span>
+                <span className="inline-flex items-center gap-1 text-sm text-gray-500">
+                    <FaTools className='text-base'/>
+                    {proj.techStack.join(", ")}
+                  </span>
+                </div>
+                <div className="flex gap-4 pt-2">
+                  <a
+                    href={proj.githubUrl}
+                    onClick={(e) => e.stopPropagation()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-cyan-600 hover:text-cyan-700 text-sm"
+                  >
+                    <FaGithub className="mr-1" />
+                    GitHub
+                  </a>
+                  { proj.liveUrl && (
+                    <a
+                      href={proj.liveUrl}
+                      onClick={(e) => e.stopPropagation()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-cyan-600 hover:text-cyan-700 text-sm"
+                    >
+                      <FaExternalLinkAlt className="mr-1" />
+                      Live
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
           ))}
-        </div> */}
+        </div>
+
 
       </motion.div>
     </section>
