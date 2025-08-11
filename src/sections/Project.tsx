@@ -57,9 +57,7 @@ return (
             onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
             className="!pb-10"
           >
-
-
-            {projectList.map((proj: Project) => (
+            {projectList.map((proj) => (
               <SwiperSlide key={proj.id} >
                 <div className="space-y-6"
                       onClick={() => navigate(`/projects/${proj.slug}`)}>
@@ -125,7 +123,7 @@ return (
         {/* Desktop: Show one project with left (text) and right (image) */}
         {/* Desktop: Grid view of projects */}
         <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-10">
-          {projectList.map((proj: Project) => (
+          {projectList.map((proj) => (
             <motion.div
               key={proj.id}
               initial={{ opacity: 0, y: 20 }}
