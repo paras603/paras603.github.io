@@ -70,7 +70,7 @@ return (
                       {proj.title}
                     </h3>
                       {/* GitHub */}
-                      <a
+                      {/* <a
                         href={proj.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -79,9 +79,9 @@ return (
                       >
                         <FaGithub className="text-xl" />
                         <span className="hidden sm:inline">GitHub</span>
-                      </a>
+                      </a> */}
                       {/* Live Site */}
-                      { proj.liveUrl && (
+                      {/* { proj.liveUrl && (
 
                         <a
                           href={proj.liveUrl}
@@ -95,7 +95,7 @@ return (
                         </a>
                       )
 
-                      }
+                      } */}
                   </div>
                   <p className="text-gray-700 leading-relaxed line-clamp-3">{proj.description}</p>
 
@@ -155,7 +155,6 @@ return (
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-cyan-600 hover:text-cyan-700 text-sm"
                   >
-                    <FaGithub className="mr-1" />
                     GitHub
                   </a>
                   { proj.liveUrl && (
