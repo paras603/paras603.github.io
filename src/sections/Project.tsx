@@ -102,7 +102,7 @@ return (
 
                       }
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{proj.description}</p>
+                  <p className="text-gray-700 leading-relaxed line-clamp-3">{proj.description}</p>
 
                   <div className="text-sm text-gray-500 flex gap-4 flex-wrap">
                     <span className="inline-flex items-center gap-1 text-sm text-gray-500">
