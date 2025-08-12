@@ -9,10 +9,9 @@ import 'swiper/swiper-bundle.css';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import SectionTitle from '../components/SectionTitle';
 
 SwiperCore.use([Pagination]);
-
-
 
 const Project: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,9 +32,7 @@ return (
       >
       <div className="flex items-center justify-between mb-12">
         {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
-          Projects
-        </h2>
+        <SectionTitle highlightLetter='P' title='Projects' />
 
         {/* All Projects Link */}
         <Link 
@@ -45,7 +42,6 @@ return (
           View All
         </Link>
       </div>
-
 
         {/* Mobile Swiper */}
         <div className="lg:hidden">
@@ -68,7 +64,6 @@ return (
                     loading="lazy"
                   />
                   <div className='flex justify-start'>
-
                     <h3 
                       className="text-2xl font-bold text-cyan-700"
                     >
@@ -130,7 +125,7 @@ return (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="cursor-pointer border border-gray-200 shadow-md hover:shadow-xl rounded-xl overflow-hidden transition-all"
+              className="cursor-pointer border border-gray-200 shadow-md hover:shadow-xl rounded-sm overflow-hidden transition-all"
               onClick={() => navigate(`/projects/${proj.slug}`)}
             >
               <img

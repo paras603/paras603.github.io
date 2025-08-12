@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import profileLottie from '../assets/animation/profile-lottie.json';
 
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import SectionTitle from '../components/SectionTitle';
 
 const About: React.FC = () => {
   const lottieOptions = {
@@ -29,14 +30,7 @@ const About: React.FC = () => {
         className="max-w-6xl mx-auto"
       >
         {/* Section Title */}
-        <div className="mb-12 flex items-center gap-3">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
-            About Me
-          </h2>
-        </div>
-
-
-
+        <SectionTitle highlightLetter="A" title="About Me" />
 
         {/* Content */}
         <div className="flex flex-col md:flex-row items-center gap-12 justify-between">

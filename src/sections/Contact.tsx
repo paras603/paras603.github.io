@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Lottie from "react-lottie";
 import { FaCheckCircle, FaTimesCircle, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import contactUsAnimation from "../assets/animation/contact-us-lottie.json";
+import SectionTitle from "../components/SectionTitle";
 
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -51,9 +52,7 @@ const Contact: React.FC = () => {
       >
         {/* Title Section */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
-            Contact Me
-          </h2>
+          <SectionTitle highlightLetter="C" title="Contact me" />
           <p className="text-gray-600 text-left text-lg md:text-xl max-w-2xl">
             Have a project in mind or just want to say hello? I’d love to hear from you.
           </p>

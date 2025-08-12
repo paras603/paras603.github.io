@@ -1,6 +1,7 @@
 import React from 'react';
 import { testimonials } from '../data/testimonials';
 import { motion } from 'framer-motion';
+import SectionTitle from '../components/SectionTitle';
 
 const Testimonial: React.FC = () => {
   return (
@@ -16,9 +17,7 @@ const Testimonial: React.FC = () => {
         className="max-w-6xl mx-auto"
       >
         <div className='mb-12'>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
-            Testimonials
-          </h2>
+          <SectionTitle highlightLetter='T' title='Testimonial' />
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

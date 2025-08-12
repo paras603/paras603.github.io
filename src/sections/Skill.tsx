@@ -1,6 +1,7 @@
 import React from 'react';
 import { skills, Skill as SkillType } from '../data/skills';
 import { motion } from "framer-motion";
+import SectionTitle from '../components/SectionTitle';
 
 const Skill: React.FC = () => {
   return (
@@ -16,9 +17,7 @@ const Skill: React.FC = () => {
         className="max-w-6xl mx-auto"
       >
         <div className='mb-12'>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
-            Skills
-          </h2>
+          <SectionTitle highlightLetter='S' title='Skills' />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">

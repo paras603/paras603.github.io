@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { experiences } from '../data/experiences';
 import { FaExternalLinkAlt, FaTasks } from 'react-icons/fa';
+import SectionTitle from '../components/SectionTitle';
 
 const Experience: React.FC = () => {
   return (
@@ -11,9 +12,7 @@ const Experience: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="mb-12 flex items-center gap-3">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 font-sans bg-cyan-100 px-4 py-2 rounded-lg inline-block">
-            Experience
-          </h2>
+          <SectionTitle highlightLetter='E' title='Experience' />
         </div>
 
         {/* Timeline */}
