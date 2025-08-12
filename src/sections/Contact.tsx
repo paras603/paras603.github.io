@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
         {/* Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
           {/* Lottie Animation */}
-          <div className="hidden md:flex justify-center items-center">
+          <div className=" sm:flex justify-center items-center">
             <Lottie options={lottieOptions} height={280} width={280} />
           </div>
 
