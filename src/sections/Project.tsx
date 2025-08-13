@@ -21,34 +21,35 @@ const Project: React.FC = () => {
 return (
     <section
       id="projects"
-      className="bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-900 py-20 px-6 sm:px-10 md:px-20 lg:px-56"
+      className="relative py-20 px-16 md:px-20 lg:px-56 bg-gradient-to-b from-gray-50 via-white to-gray-50  text-gray-500"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl mx-auto "
       >
-      <div className="flex items-center justify-between mb-12">
-        {/* Title */}
-        <SectionTitle highlightLetter='P' title='Projects' />
+        <div className="flex items-center justify-between mb-12">
+          {/* Title */}
+          <SectionTitle highlightLetter='P' title='Projects' />
 
-        {/* All Projects Link */}
-        <Link 
-          to='/projects'
-          className="text-cyan-600 font-medium text-lg hover:text-cyan-800 transition-colors border border-cyan-600 px-3 py-1 rounded-full hover:border-cyan-800"
-        >
-          View All
-        </Link>
-      </div>
+          {/* All Projects Link */}
+          <Link 
+            to='/projects'
+            className="text-cyan-600 font-medium text-lg hover:text-cyan-800 transition-colors border border-cyan-600 px-3 py-1 rounded-full hover:border-cyan-800"
+          >
+            View All
+          </Link>
+        </div>
 
         {/* Mobile Swiper */}
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <Swiper
+            slidesPerView={1.1}
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            slidesPerView={1}
+            // slidesPerView={1}
             spaceBetween={20}
             onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
             className="!pb-10"
@@ -60,7 +61,7 @@ return (
                   <img
                     src={proj.imageUrl}
                     alt={proj.title}
-                    className="rounded-xl shadow-lg border border-gray-200 object-cover w-full aspect-video"
+                    className="rounded-sm shadow-lg border border-gray-200 object-cover w-full aspect-video cursor-pointer"
                     loading="lazy"
                   />
                   <div className='flex justify-start'>
@@ -113,11 +114,13 @@ return (
               </SwiperSlide>
             ))}
           </Swiper>
+          <p className="text-sm text-gray-400 mt-2 mb-6 text-center md:hidden">
+            Swipe to explore projects →
+          </p>
         </div>
 
-        {/* Desktop: Show one project with left (text) and right (image) */}
         {/* Desktop: Grid view of projects */}
-        <div className="hidden lg:grid grid-cols-2 xl:grid-cols-3 gap-10">
+        <div className="hidden md:grid grid-cols-2 xl:grid-cols-3 gap-10">
           {projectList.map((proj) => (
             <motion.div
               key={proj.id}
@@ -135,7 +138,7 @@ return (
                 loading="lazy"
               />
               <div className="p-5 space-y-3">
-                <h3 className="text-xl font-bold text-cyan-700">{proj.title}</h3>
+                <h3 className="text-xl font-bold text-cyan-700 hover:underline">{proj.title}</h3>
                 <p className="text-gray-700 text-sm line-clamp-3">{proj.description}</p>
                 <div className="text-sm text-gray-500 flex gap-2 flex-wrap">
                  <span className="inline-flex items-center gap-1 text-sm text-gray-500">
