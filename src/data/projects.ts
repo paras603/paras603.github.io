@@ -1,13 +1,10 @@
-import easyCartHero from '../assets/images/easy-cart/project-hero.png';
-import easyCart1 from '../assets/images/easy-cart/project-feature1.png';
-import easyCart2 from '../assets/images/easy-cart/project-feature2.png';
-import easyCart3 from '../assets/images/easy-cart/project-feature3.png';
-import webPrintHero from '../assets/images/web-print/web-print.png';
-import webPrint1 from '../assets/images/web-print/project-feature1.png';
-import webPrint2 from '../assets/images/web-print/project-feature2.png';
-import employeeDirectoryHero from '../assets/images/employee-directory/project-hero.png';
-import employeeDirectory1 from '../assets/images/employee-directory/project-feature1.png';
-import employeeDirectory2 from '../assets/images/employee-directory/project-feature2.png';
+import { 
+  easyCartHero, easyCart1, easyCart2, easyCart3,
+  webPrintHero, webPrint1, webPrint2,
+  employeeDirectoryHero, employeeDirectory1, employeeDirectory2,
+  bookLibraryHero, bookLibrary1, bookLibrary2,
+  recreationalHero
+ } from '../assets/images/index';
 
 export interface Project {
   id: number;
@@ -35,14 +32,14 @@ export const projectList: Project[] = [
       "User experience is a core focus of Easy Cart. From the splash screen and first-time tutorial to in-app reminders and trash recovery, every interaction is designed with convenience in mind. Notifications help users stay on top of shopping days, while deleted lists can be restored from the trash. Built with React Native, Laravel, and MySQL, Easy Cart delivers a responsive, full-featured shopping assistant right at your fingertips."
     ],
     features: [
-      "Upload JSON files securely",
-      "Follower Growth Visualization",
-      "Facebook Friends Report",
-      "Backend processing with Django & Pandas",
-      "Data visualization using Matplotlib",
-      "Modular UI ready for future expansions",
+      "Smart list sorting and filtering",
+      "Export lists to PDF",
+      "Duplicate and undo list actions",
+      "Search and prioritize items",
+      "Trash recovery and notifications",
+      "Favorites list and priority tagging",
     ],
-    techStack: ["Kotlin", "Android Studio", "Mobile App "],
+    techStack: ["Kotlin", "Android Studio",],
     date: "April 2024",
     imageUrl: easyCartHero,
     githubUrl: "https://github.com/paras603/easy-cart",
@@ -100,5 +97,54 @@ export const projectList: Project[] = [
     githubUrl: "https://github.com/paras603/EmployeeDirectory",
     backgroundColor: "bg-gradient-to-r from-sky-400 to-indigo-600",
     images: [ employeeDirectoryHero, employeeDirectory1, employeeDirectory2 ]
+  },
+  {
+    id: 4,
+    slug: "book-library",
+    title: "Book Library",
+    description: [
+      "A cross-platform mobile app built with React Native and Firebase that allows library users to browse and borrow books. Designed for both Android and iOS platforms.",
+      "It is a cross-platform mobile application built with React Native, designed to enhance how users interact with a library system. The app allows users to securely sign up and log in using Firebase Authentication, creating a personalized experience for browsing and borrowing books. Once logged in, users can view available books, search by title or author, and borrow them with a simple tap. The clean and responsive UI ensures smooth navigation across both Android and iOS devices.",
+      "The backend is powered by Firebase Firestore, enabling real-time data syncing and scalable storage for user and book data. Each user has a unique borrowing history, and book availability is dynamically updated across all devices. With a full authentication flow, real-time database interactions, and seamless cross-platform performance, Book Library showcases my ability to develop secure, cloud-connected mobile apps with modern design and functionality.",
+    ],
+    features: [
+      "Register and Login into the system",
+      "Browse available books in the library",
+      "Search for books by title or author",
+      "Borrow books with one tap",
+      "View borrowing history",
+      "Firebase authentication for user login",
+      "Real-time updates using Firestore",
+    ],
+    date: "March 2024",
+    techStack: ["React Native", "Firebase", "Cross-platform"],
+    imageUrl: bookLibraryHero,
+    githubUrl: "https://github.com/paras603/book-library",
+    backgroundColor: "bg-gradient-to-r from-sky-400 to-indigo-600",
+    images: [ bookLibraryHero, bookLibrary1, bookLibrary2],
+  },
+  {
+    id: 5,
+    slug: "recreational-center",
+    title: "Recreational Center",
+    description: [
+      "A C# Windows Forms application for managing a recreation center with separate login systems and dashboards for Admin and Staff. Built using Visual Studio.",
+      "The Recreation Center Management System is a desktop application developed in C# using Windows Forms in Visual Studio. It offers a secure and user-friendly environment for managing facility operations through differentiated access for Administrators and Staff. Administrators log in through the Admin Login, granting them access to the Admin Dashboard, where they can oversee staff accounts and perform high-level management tasks. Staff members use the Staff Login to access the Staff Dashboard, enabling them to efficiently manage day-to-day operations like check-ins, activity tracking, and schedule coordination. The project utilizes .Designer.cs and .resx files for UI layout and resource organization, while application settings are handled through the App.config file, all coordinated from the Program.cs entry point.",
+      "Built with clarity and structure in mind, the system emphasizes clean separation between user roles and their respective functionalities, making it straightforward to enhance with features like database integration, improved validation, or richer UI experiences in the future. Its modular design highlights maintainability and scalability—qualities that are essential for practical software solutions. Whether you're interested in understanding workflow logic, UI architecture, or C# application structure, this project represents a solid demonstration of foundational WinForms development, role-based access control, and organized coding practices.",
+    ],
+    features: [
+      "Admin and Staff login system",
+      "Role-based dashboards for Admin and Staff",
+      "Built using Windows Forms and Visual Studio",
+      "Centralized configuration with App.config",
+      "Clean code organization (Program.cs, .Designer.cs, .resx)",
+      "Scalable structure for future features like database integration",
+    ],
+    date: "February 2022",
+    techStack: ["C#", ".NET (Windows Forms)", "Visual Studio"],
+    imageUrl: recreationalHero,
+    githubUrl: "https://github.com/paras603/recreation-center",
+    backgroundColor: "bg-gradient-to-r from-sky-400 to-indigo-600",
+    images: [recreationalHero],
   },
 ];

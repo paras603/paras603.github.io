@@ -32,7 +32,7 @@ const ProjectDetail: React.FC = () => {
         </h1>
 
         {/* Date & stack */}
-        <div className="text-sm text-gray-500 flex gap-5 flex-wrap">
+        <div className="text-sm text-gray-500 flex gap-5 flex-wrap mb-2">
           <span className="inline-flex items-center gap-1 text-sm text-gray-500">
           <FaCalendarAlt className="text-base" />
           {project.date}
