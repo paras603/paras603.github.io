@@ -16,6 +16,7 @@ import cityTravellerHero from './city-traveller/project-hero.png';
 import cityTraveller1 from './city-traveller/project-feature1.png';
 import cityTraveller2 from './city-traveller/project-feature2.png';
 import laravelHero from './extras/laravel-hero.png';
+import animeRecommendationHero from './anime-recommendation/project-hero.png';
 
 export {
     easyCartHero, easyCart1, easyCart2, easyCart3,
@@ -25,4 +26,5 @@ export {
     recreationalHero,
     cityTravellerHero, cityTraveller1, cityTraveller2,
     laravelHero,
+    animeRecommendationHero,
 }

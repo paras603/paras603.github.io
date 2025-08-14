@@ -92,7 +92,7 @@ const About: React.FC = () => {
                 Contact Me
               </a>
               <a
-                href="/assets/resume.pdf" // Replace with actual path
+                href="../src/assets/resume.pdf" 
                 download
                 className="px-6 py-2 border border-cyan-600 text-cyan-600 rounded-md font-medium hover:bg-cyan-50 transition"
               >

@@ -6,6 +6,7 @@ import {
   recreationalHero,
   cityTravellerHero, cityTraveller1, cityTraveller2,
   laravelHero,
+  animeRecommendationHero,
  } from '../assets/images/index';
 
 export interface Project {
@@ -67,7 +68,7 @@ const projectList: Project[] = [
     ],
     date: "February 2025",
     imageUrl: webPrintHero,
-    techStack: ["React", "Django", "Data visualization"],
+    techStack: ["React", "Django", "Data visualization", "Python"],
     githubUrl: "https://github.com/paras603/web_print",
     backgroundColor: "bg-gradient-to-r from-yellow-400 to-orange-500",  
     images: [webPrintHero, webPrint1, webPrint2]  
@@ -197,7 +198,32 @@ const projectList: Project[] = [
   githubUrl: "https://github.com/paras603/myStay", 
   backgroundColor: "bg-gradient-to-r from-rose-400 to-purple-500",
   images: [laravelHero], 
+},
+{
+  "id": 8,
+  "slug": "anime-recommender",
+  "title": "Anime Recommendation System",
+  "description": [
+    "A content-based recommendation system built with Python that suggests similar anime titles based on genre similarity using TF-IDF and cosine similarity.",
+    "This terminal-based project allows users to input an anime title and returns top 10 similar titles. It uses machine learning techniques like TF-IDF vectorization and Nearest Neighbors to compare anime genre data.",
+    "Ideal for anime fans or as an educational project to demonstrate content-based filtering with real-world datasets. It emphasizes data cleaning, vectorization, and cosine similarity."
+  ],
+  "features": [
+    "Content-based filtering using TF-IDF and Cosine Similarity",
+    "Search anime titles and get top 10 recommendations",
+    "Preprocessing of multi-label genre data",
+    "Removes unknown or incomplete data fields",
+    "CLI-based interaction for simplicity and speed",
+    "Modular Python code with clean logic separation"
+  ],
+  "date": "March 2021",
+  "techStack": ["Python", "Pandas", "NumPy", "scikit-learn", "SciPy"],
+  "imageUrl": animeRecommendationHero, 
+  "githubUrl": "https://github.com/paras603/anime-recommendation",
+  "backgroundColor": "bg-gradient-to-r from-blue-400 to-indigo-500",
+  "images": [animeRecommendationHero]
 }
+
 
 ];
 
