@@ -27,7 +27,7 @@ export const skills: Skill[] = [
   { name: 'React', proficiency: 90, level: 'Expert', icon: FaReact },
   { name: 'JavaScript', proficiency: 85, level: 'Advanced', icon: FaJsSquare },
   { name: 'TypeScript', proficiency: 85, level: 'Advanced', icon: SiTypescript },
-  { name: 'Node.js', proficiency: 75, level: 'Intermediate', icon: FaNodeJs },
+  // { name: 'Node.js', proficiency: 75, level: 'Intermediate', icon: FaNodeJs },
   { name: 'CSS3', proficiency: 80, level: 'Advanced', icon: FaCss3Alt },
   { name: 'Databases', proficiency: 70, level: 'Intermediate', icon: FaDatabase },
   { name: 'Python', proficiency: 65, level: 'Intermediate', icon: FaPython },

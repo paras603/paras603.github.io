@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { projectList } from '../data/projects';
+import { latestProject } from '../data/projects';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub, FaExternalLinkAlt, FaCalendarAlt, FaTools } from 'react-icons/fa';
 import SwiperCore from 'swiper';
@@ -15,7 +15,6 @@ SwiperCore.use([Pagination]);
 
 const Project: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const project = projectList[currentIndex];
   const navigate = useNavigate();
 
 return (
@@ -49,12 +48,11 @@ return (
             slidesPerView={1.1}
             modules={[Pagination]}
             pagination={{ clickable: true }}
-            // slidesPerView={1}
             spaceBetween={20}
             onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)}
             className="!pb-10"
           >
-            {projectList.map((proj) => (
+            {latestProject.map((proj) => (
               <SwiperSlide key={proj.id} >
                 <div className="space-y-6"
                       onClick={() => navigate(`/projects/${proj.slug}`)}>
@@ -70,33 +68,6 @@ return (
                     >
                       {proj.title}
                     </h3>
-                      {/* GitHub */}
-                      {/* <a
-                        href={proj.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${proj.title} GitHub Repository`}
-                        className="inline-flex items-center gap-2 pl-4 text-cyan-600 hover:text-cyan-700 transition-colors text-base"
-                      >
-                        <FaGithub className="text-xl" />
-                        <span className="hidden sm:inline">GitHub</span>
-                      </a> */}
-                      {/* Live Site */}
-                      {/* { proj.liveUrl && (
-
-                        <a
-                          href={proj.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${proj.title} Live Website`}
-                          className="inline-flex items-center gap-2 pl-4 text-cyan-600 hover:text-cyan-700 transition-colors text-base"
-                        >
-                          <FaExternalLinkAlt className="text-sm" />
-                          <span className="hidden sm:inline">Live</span>
-                        </a>
-                      )
-
-                      } */}
                   </div>
                   <p className="text-gray-700 leading-relaxed line-clamp-3">{proj.description}</p>
 
@@ -121,7 +92,7 @@ return (
 
         {/* Desktop: Grid view of projects */}
         <div className="hidden md:grid grid-cols-2 xl:grid-cols-3 gap-10">
-          {projectList.map((proj) => (
+          {latestProject.map((proj) => (
             <motion.div
               key={proj.id}
               initial={{ opacity: 0, y: 20 }}

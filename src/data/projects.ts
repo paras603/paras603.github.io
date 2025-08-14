@@ -3,7 +3,9 @@ import {
   webPrintHero, webPrint1, webPrint2,
   employeeDirectoryHero, employeeDirectory1, employeeDirectory2,
   bookLibraryHero, bookLibrary1, bookLibrary2,
-  recreationalHero
+  recreationalHero,
+  cityTravellerHero, cityTraveller1, cityTraveller2,
+  laravelHero,
  } from '../assets/images/index';
 
 export interface Project {
@@ -21,7 +23,7 @@ export interface Project {
   images?: string [];
 }
 
-export const projectList: Project[] = [
+const projectList: Project[] = [
   {
     id: 1,
     slug: 'easy-cart',
@@ -147,4 +149,60 @@ export const projectList: Project[] = [
     backgroundColor: "bg-gradient-to-r from-sky-400 to-indigo-600",
     images: [recreationalHero],
   },
+  {
+    id: 6,
+    slug: "city-traveller",
+    title: "City Traveller",
+    description: [
+      "This website presents you the beautiful geography of Nepal. If you are planning to spend your next vacation in Nepal, this website has everything you need.",
+      "CityTraveller is a travel-oriented website that showcases the breathtaking geography and rich cultural heritage of Nepal. Designed to be the perfect planning companion for your next vacation, the website offers detailed insights into top destinations, popular tour packages, and travel tips. Developed by Roshan Budhathoki and Paras Mani Rai, CityTraveller includes a thoughtfully designed homepage and contact page by Roshan, while Paras focused on the destinations and tour packages sections. Both team members collaborated on the overall design principles, accessibility standards, and SEO strategies to ensure the site is both visually engaging and easy to find online.",
+      "The website follows key design principles such as proximity, contrast, alignment, repetition, and typography to provide a clean, intuitive user experience. Accessibility was prioritized through features like text alternatives for images, responsive design, and proper semantic HTML, making the site inclusive for all users. For search engine optimization, techniques such as meta tags, alt text, and header structuring were implemented to increase visibility. All visual content is sourced from Pexels, ensuring high-quality, copyright-free imagery that enhances the overall appeal of the site.",
+    ],
+    features: [
+      "User-Friendly Interface",
+      "Destination Highlights",
+      "Tour Packages",
+      "Responsive Design",
+      "Accessibility Features",
+      "Meta tags and keywords included to improve visibility on search engines (SEO)"
+    ],
+    date: "August 2024",
+    techStack: ["HTML", "CSS"],
+    imageUrl: cityTravellerHero,
+    githubUrl: "https://github.com/paras603/citytraveller",
+    backgroundColor: "bg-gradient-to-r from-sky-400 to-indigo-600",
+    images: [cityTravellerHero, cityTraveller1, cityTraveller2],
+  },
+{
+  id: 7,
+  slug: "my-stay",
+  title: "myStay - Homestay Booking Website",
+  description: [
+    "myStay is a full-featured homestay booking platform built with Laravel and MySQL. It allows users to search and book homestays based on location, date, and preferences, while giving homestay owners a dashboard to manage listings, bookings, and availability.",
+    "This project focuses on creating a seamless two-sided experience — travelers can easily find and reserve accommodations, and hosts can efficiently list properties and manage reservations. The application includes secure authentication, real-time availability checks, and an intuitive interface built with responsive design in mind.",
+    "The admin panel offers complete control over users, listings, and reservations, making it a scalable solution for real-world deployment. Emphasis was placed on UX/UI best practices and mobile optimization to ensure a clean, professional look across all devices.",
+  ],
+  features: [
+    "User Registration and Authentication",
+    "Advanced Homestay Search (by location, date, and preferences)",
+    "Detailed Property Pages (with room types, pricing, and amenities)",
+    "Reservation System with Secure Payment Integration",
+    "Homestay Owner Dashboard (property and booking management)",
+    "Admin Panel for Full Control over Platform Data",
+    "Responsive and Mobile-Friendly Design",
+  ],
+  date: "August 2021",
+  techStack: ["Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
+  imageUrl: laravelHero, 
+  githubUrl: "https://github.com/paras603/myStay", 
+  backgroundColor: "bg-gradient-to-r from-rose-400 to-purple-500",
+  images: [laravelHero], 
+}
+
 ];
+
+export const latestProject: Project[] = [...projectList]
+  .sort((a,b) => b.id - a.id)
+  .slice(0,6);
+
+export { projectList };
