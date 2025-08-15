@@ -32,7 +32,7 @@ const projectList: Project[] = [
     description: [
       "Easy Cart Your Smart Shopping Companion Easy Cart is a feature-packed mobile application designed to make your shopping experience seamless, organized, and efficient. Whether you're grocery shopping, planning an event, or managing your household needs, Easy Cart simplifies the process and keeps everything in one place.",
       "The app includes a variety of advanced features to enhance usability and productivity. Users can sort and filter items by name, date, or priority, export lists as PDFs, and mark items or entire lists as purchased. Easy Cart also supports smart functionalities like list duplication, undo actions, clearing all items, and searching items by name. Additional tools like a favorites list and priority tagging make frequent shopping even faster.",
-      "User experience is a core focus of Easy Cart. From the splash screen and first-time tutorial to in-app reminders and trash recovery, every interaction is designed with convenience in mind. Notifications help users stay on top of shopping days, while deleted lists can be restored from the trash. Built with React Native, Laravel, and MySQL, Easy Cart delivers a responsive, full-featured shopping assistant right at your fingertips."
+      "User experience is a core focus of Easy Cart. From the splash screen and first-time tutorial to in-app reminders and trash recovery, every interaction is designed with convenience in mind. Notifications help users stay on top of shopping days, while deleted lists can be restored from the trash. Built with Android Studio (Kotlin), Easy Cart delivers a responsive, full-featured shopping assistant right at your fingertips."
     ],
     features: [
       "Smart list sorting and filtering",

@@ -14,7 +14,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
     {
-    role: 'Mobile Application Development',
+    role: 'Post Graduate - Mobile Application Development',
     company: 'Fanshawe College',
     website: 'https://www.fanshawec.ca/',
     period: 'May 2024 – April 2025',
@@ -42,7 +42,7 @@ export const experiences: Experience[] = [
     role: 'Bachelor in Information Technology',
     company: 'Itahari International College',
     website: 'https://iic.edu.np/',
-    period: '2019 – 2022',
+    period: 'June 2019 – January 2023',
     techStack: ['Java', 'Puthon', 'MySQL', 'JavaScript', 'Laravel', 'React'],
     description:[
         'Developed a hotel booking web app with Laravel, MySQL, and React to streamline workflows, built an anime recommendation system using Python and KNN, and gained foundational knowledge in networks, OS, and application support for identity and campus systems.',
@@ -63,4 +63,18 @@ export const experiences: Experience[] = [
       ],
     icon: FaBriefcase,
   },
+  {
+  role: 'Web Developer Intern',
+  company: 'Eratech Nepal Pvt. Ltd.',
+  website: 'https://eratechnepal.com/',
+  period: 'August 2021 – October 2021',
+  techStack: ['Laravel', 'PHP', 'MySQL', 'Blade', 'Bootstrap', 'CSS', 'HTML'],
+  description: [
+    'Contributed to the development of a Laravel-based e-commerce platform with features such as product listings, user registration, and shopping cart functionality.',
+    'Collaborated with the remote development team to debug backend logic, optimize database queries, and implement secure authentication and routing.',
+    'Enhanced frontend UI using Blade templates and ensured full mobile responsiveness with Bootstrap and CSS.',
+  ],
+  icon: FaBriefcase,
+}
+
 ];
