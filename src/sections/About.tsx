@@ -92,16 +92,13 @@ const About: React.FC = () => {
                 Contact Me
               </a>
               <a
-                href="../src/assets/resume.pdf" 
+                href="/resume.pdf" 
                 download
                 className="px-6 py-2 border border-cyan-600 text-cyan-600 rounded-md font-medium hover:bg-cyan-50 transition"
               >
                 Download Resume
               </a>
             </div>
-
-          
-
           </div>
         </div>
       </motion.div>

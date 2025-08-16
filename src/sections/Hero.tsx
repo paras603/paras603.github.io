@@ -11,7 +11,6 @@ const lines = [
   '/home/paras/portfolio',
   'ls -la',
   '📁 projects   📁 skills   📄 resume.pdf',
-  'curl paras.dev --output awesome',
   'echo "Always learning. Always building."',
 ];
 

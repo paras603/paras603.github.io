@@ -43,7 +43,7 @@ export const experiences: Experience[] = [
     company: 'Itahari International College',
     website: 'https://iic.edu.np/',
     period: 'June 2019 – January 2023',
-    techStack: ['Java', 'Puthon', 'MySQL', 'JavaScript', 'Laravel', 'React'],
+    techStack: ['Java', 'Python', 'MySQL', 'JavaScript', 'Laravel', 'React'],
     description:[
         'Developed a hotel booking web app with Laravel, MySQL, and React to streamline workflows, built an anime recommendation system using Python and KNN, and gained foundational knowledge in networks, OS, and application support for identity and campus systems.',
       ],
